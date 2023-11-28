@@ -11,13 +11,21 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.1.0",
+    "@angular/cdk": "^16.2.12",
     "@angular/common": "^16.1.0",
     "@angular/compiler": "^16.1.0",
     "@angular/core": "^16.1.0",
     "@angular/forms": "^16.1.0",
+    "@angular/material": "^16.2.12",
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@fortawesome/angular-fontawesome": "^0.13.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@pnp/sp": "^2.11.0",
+    "angular-highcharts": "^16.0.0",
+    "cors": "^2.8.5",
+    "highcharts-angular": "^4.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -33,6 +41,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "tailwindcss": "^3.3.5",
     "typescript": "~5.1.3"
   }
 }

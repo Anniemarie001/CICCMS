@@ -1,0 +1,54 @@
+<mat-nav-list>
+  <div class="logo py-4">
+    <img src="./assets/ciclogo.png " width="30px" height="150px"  />
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2" >Contract Management System</h2>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+    <mat-icon>home</mat-icon> Home
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon> Dashboard
+  </a>
+   <mat-accordion multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>description</mat-icon> Request
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+<!--       <a mat-list-item routerLinkActive="list-item-active" routerLink="/request-for-contract">
+        Request/submit Contracts
+      </a> -->
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/request-forms">
+        Request/Attach Contract
+     </a>
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/my-request">
+        All Requests
+      </a>
+    </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>assignment</mat-icon> Contracts
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/create-contract">
+          Create Contract
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/all-contracts">
+          All Contracts
+        </a>
+      </mat-expansion-panel>
+
+ </mat-accordion>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/reports">
+      <mat-icon>insert_chart</mat-icon> Reports
+  </a>
+<!--   <a mat-list-item routerLinkActive="list-item-active" routerLink="/profile">
+      <mat-icon>person</mat-icon> Profile
+  </a> -->
+
+
+</mat-nav-list>

@@ -1,0 +1,55 @@
+/* app.component.scss */
+form {
+    max-width: 80%; /* Make the form flexible to fit the window */
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f2f2f2; /* Grey background color */
+    border: 2px solid #800000; /* Maroon border color */
+    border-radius: 10px; /* Rounded corners */
+
+    .form-group {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input, select {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-top: 5px;
+        border: 1px solid #800000; /* Maroon border color for inputs */
+        border-radius: 5px; /* Rounded corners for inputs */
+        &.subsidiary-input {
+          background-color: #fff;
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    button {
+      grid-column: span 2;
+      background-color: #800000; /* Maroon background color for the button */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #5a0000; /* Darker maroon on hover */
+      }
+
+      &:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+    }
+  }

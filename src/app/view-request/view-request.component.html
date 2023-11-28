@@ -1,0 +1,66 @@
+<div class="mat-elevation-z8">
+    <form [formGroup]="viewRequestForm">
+
+      <!-- Readonly Fields -->
+      <div class="readonly-fields">
+        <div class="form-group">
+          <label for="contractType">Contract Type:</label>
+          <input id="contractType" matInput formControlName="contractType" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="serviceType">Service Type:</label>
+          <input id="serviceType" matInput formControlName="serviceType" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="Subsidiary">Subsidiary:</label>
+          <input id="Subsidiary" matInput formControlName="Subsidiary" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="requestedDate">Requested Date:</label>
+          <input id="requestedDate" matInput formControlName="requestedDate" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <input id="status" matInput formControlName="status" readonly>
+        </div>
+      </div>
+
+      <!-- Editable Fields -->
+      <div class="editable-fields">
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <textarea id="comment" matInput formControlName="comment" placeholder="Comment"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="assignee">Assignee:</label>
+          <mat-select id="assignee" formControlName="assignees" placeholder="Assignees" multiple>
+            <mat-option *ngFor="let user of usersList" [value]="user.id">
+              {{ user.name }}
+            </mat-option>
+          </mat-select>
+        </div>
+
+        <div class="form-group">
+          <label for="fileInput">Attach Documents:</label>
+          <input id="fileInput" type="file" (change)="onFileSelected($event)" multiple>
+        </div>
+
+      </div>
+    </form>
+      <!-- Buttons -->
+  <div class="buttons">
+    <!-- Generate Contract Button -->
+    <button mat-raised-button color="grey" (click)="generateContract()">Generate Contract</button>
+
+    <!-- Return Contract Button -->
+    <button mat-raised-button color="grey" (click)="returnContract()">Return Request</button>
+  </div>
+  </div>
+
+
+

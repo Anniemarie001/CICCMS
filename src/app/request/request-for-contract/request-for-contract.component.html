@@ -1,0 +1,88 @@
+<form [formGroup]="contractForm" (ngSubmit)="submitForm()">
+  <!-- Contract Type -->
+  <div class="form-group">
+    <label for="contractType">Contract Type</label>
+    <select id="contractType" name="contractType" formControlName="contractType" required>
+      <option value="" disabled selected>Select Contract Type</option>
+      <!-- Add options for contract types -->
+      <option value="SLA">SLA</option>
+      <option value="NDA">NDA</option>
+      <!-- Add more options as needed -->
+    </select>
+  </div>
+
+  <!-- Service Type -->
+  <div class="form-group">
+    <label for="ServiceType">Service Type</label>
+    <select id="ServiceType" name="ServiceType" formControlName="ServiceType" required>
+      <option value="" disabled selected>Select Service Type</option>
+      <option value="Services">Services</option>
+      <option value="Purchase of Goods">Goods</option>
+      <option value="NDA">NDA</option>
+    </select>
+  </div>
+
+  <!-- Subsidiary -->
+  <div class="form-group">
+    <mat-form-field>
+      <mat-label>Party A</mat-label>
+      <mat-select [formControl]="subsidiary" multiple>
+        <mat-option *ngFor="let subsidiary of subsidiaryList; trackBy: trackByFn" [value]="subsidiary">
+          {{ subsidiary }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+    <!-- Parties -->
+    <div class="form-group">
+      <label for="parties">Party B</label>
+      <input type="text" id="parties" name="parties" formControlName="parties" required>
+    </div>
+
+  <!-- Terms -->
+  <div class="form-group">
+    <label for="terms">Terms</label>
+    <input type="text" id="terms" name="terms" formControlName="terms" required>
+  </div>
+
+  <!-- Quantity -->
+ <!--  <div class="form-group">
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" formControlName="quantity" [attr.disabled]="isQuantityDisabled() ? true : null" required>
+  </div> -->
+
+
+
+  <!-- Price -->
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" formControlName="price" [attr.disabled]="isPriceDisabled() ? true : null" required>
+  </div>
+
+  <!-- Period (Start Date and End Date) -->
+  <div class="form-group">
+    <label for="startDate">Start Date:</label>
+    <input type="date" formControlName="startDate">
+  </div>
+  <div class="form-group">
+    <label for="endDate">End Date:</label>
+    <input type="date" formControlName="endDate">
+  </div>
+
+    <!-- Narration -->
+    <div class="form-group">
+      <label for="terms">Narration</label>
+      <input type="text" id="Narration" name="Narration" formControlName="Narration" required>
+    </div>
+
+  <!-- Attach Document -->
+  <div class="form-group">
+    <label for="attachDocument">Attach Document:</label>
+    <input type="file" formControlName="attachDocument" accept=".pdf, .doc, .docx">
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="contractForm.valid">Submit</button>
+</form>

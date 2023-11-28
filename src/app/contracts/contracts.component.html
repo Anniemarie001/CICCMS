@@ -1,0 +1,21 @@
+<h1>Contracts</h1>
+<mat-list>
+    <div mat-subheader>Folders</div>
+    <ng-container *ngFor="let folder of folders; trackBy: trackByFn">
+      <mat-list-item>
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <div matListItemTitle>{{folder.name}}</div>
+        <div matListItemLine>{{folder.updated | date}}</div>
+      </mat-list-item>
+    </ng-container>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Others</div>
+    <ng-container *ngFor="let note of notes; trackBy: trackByFn">
+      <mat-list-item>
+        <mat-icon matListItemIcon>note</mat-icon>
+        <div matListItemTitle>{{note.name}}</div>
+        <div matListItemLine>{{note.updated | date}}</div>
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+  

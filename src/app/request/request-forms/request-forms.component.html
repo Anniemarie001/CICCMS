@@ -1,0 +1,32 @@
+<h2>Request For Contract From Below Templates</h2>
+
+
+<!-- Button for redirecting to templates: From Templates -->
+<!-- <button mat-raised-button color="grey" (click)="chooseFromTemplates()">From Templates</button> -->
+
+
+<!-- Button for attaching: By Attaching -->
+<!-- <input type="file" #fileInput (change)="attachFile(fileInput)" style="display: none">
+<button mat-raised-button color="grey" (click)="fileInput.click()">Attach</button> -->
+
+
+<!-- old display of template data -->
+<!-- <div class="contracts-templates-container">
+  <div *ngFor="let template of templates" class="template-item" (click)="redirectToRequestForm(template.id)">
+    {{ template.name }}
+  </div>
+</div> -->
+
+<!-- request-forms.component.html -->
+
+<div class="contracts-templates-container">
+  <div *ngFor="let template of templates" class="template-item" (click)="redirectToRequestForm(template.id)">
+    <h3>{{ template.name }}</h3>
+    <p>{{ template.description }}</p>
+  </div>
+</div>
+
+
+
+
+

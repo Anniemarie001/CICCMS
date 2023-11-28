@@ -1,0 +1,89 @@
+<div class="mat-elevation-z8">
+  <form [formGroup]="searchForm" (ngSubmit)="applyFilter()">
+    <mat-form-field>
+      <input matInput formControlName="search" placeholder="Search by Contract Type or Status">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" formControlName="requestedDate" placeholder="Filter by Requested Date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button type="submit" mat-button color="primary">Apply Filter</button>
+  </form>
+
+  <div>
+    <button mat-raised-button color="primary" (click)="openSelectedItems()">View Request</button>
+  </div>
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+
+     <!-- Selection Column -->
+     <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="toggleSelectAll($event)"></mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (change)="toggleSelectRow(row)"></mat-checkbox>
+      </td>
+    </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+        No.
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Contract Type Column -->
+    <ng-container matColumnDef="contractType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Contract Type">
+        Contract Type
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.contractType}} </td>
+    </ng-container>
+  <!-- Service Type Column -->
+        <ng-container matColumnDef="serviceType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Service Type">
+            Service Type
+          </th>
+          <td mat-cell *matCellDef="let element"> {{element.serviceType}} </td>
+        </ng-container>
+  <!-- Contract Type Column -->
+    <ng-container matColumnDef="Subsidiary">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Subsidiary">
+        Subsidiary
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.Subsidiary}} </td>
+    </ng-container>
+
+    <!-- Requested Date Column -->
+    <ng-container matColumnDef="requestedDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Requested Date">
+        Requested Date
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.requestedDate}} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Status">
+        Status
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="viewRequestDetails(element)">
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)" [ngClass]="{'highlight': clickedRows.has(row)}"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page "></mat-paginator>
+</div>

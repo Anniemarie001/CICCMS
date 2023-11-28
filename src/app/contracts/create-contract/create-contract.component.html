@@ -1,0 +1,12 @@
+<!-- create-contracts.component.html -->
+<h2>Create Contracts</h2>
+
+<!-- Option 1: From Templates -->
+<button mat-raised-button color="primary" (click)="chooseFromTemplates()">From Templates</button>
+
+<!-- Option 2: From Scratch -->
+<button mat-raised-button color="primary" (click)="designFromScratch()">From Scratch</button>
+
+<!-- Option 3: By Attaching -->
+<input type="file" #fileInput (change)="attachFile(fileInput)" style="display: none">
+<button mat-raised-button color="primary" (click)="fileInput.click()">By Attaching</button>

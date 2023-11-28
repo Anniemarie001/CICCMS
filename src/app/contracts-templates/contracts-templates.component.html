@@ -1,0 +1,5 @@
+<div class="contracts-templates-container">
+  <div *ngFor="let template of templates" class="template-item" (click)="redirectToRequestForm(template.id)">
+    {{ template.name }}
+  </div>
+</div>

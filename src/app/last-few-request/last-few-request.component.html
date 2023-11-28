@@ -1,0 +1,24 @@
+<div class="request">
+    <div class="title">Last few request</div>
+    <div class="request-wrapper">
+      <div class="request" *ngFor="let requests of request">
+       
+        <div class="Type">{{ requests.Type }}</div>
+        <div class="Title">{{ requests.Title }}</div>
+        <div class="requests">
+          <div class="RequestedBy">{{ requests.RequestedBy }}</div>
+          </div>
+        <div
+          class="status"
+          [ngClass]="{
+            Draft: requests.status === 'Draft',
+            Review: requests.status === 'Review',
+            Rejected: requests.status === 'Rejected',
+            Signed: requests.status === 'Signed'
+          }"
+        >
+          {{ requests.status }}
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,61 @@
+
+.mat-elevation-z8 {
+  max-width: 95%; /* Make the form flexible to fit the window */
+    margin: 30px auto;
+    padding: 2px;
+    background-color: #f2f2f2; /* Grey background color */
+    border: 3px solid #800000; /* Maroon border color */
+    border-radius: 10px; /* Rounded corners */
+  form {
+    max-width: 130%; /* Make the form flexible to fit the window */
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #f2f2f2; /* Grey background color */
+    border: 3px solid #800000; /* Maroon border color */
+    border-radius: 10px; /* Rounded corners */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Two columns
+    grid-gap: 20px; // Adjust the gap between columns
+    margin-top: 20px; // Adjust the margin from the top
+  }
+
+  .readonly-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Two columns for readonly fields
+    grid-gap: 20px; // Adjust the gap between columns
+  }
+
+  .editable-fields {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; // Adjust the margin between readonly and editable fields
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px; // Adjust the margin between form groups
+  }
+
+  .form-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    grid-gap: 20px;
+    margin-top: 10px; // Adjust the margin between editable fields and buttons
+  }
+
+  label {
+    font-size: 18px; // Adjust the font size of labels
+    margin-bottom: 8px; // Adjust the margin between label and input
+  }
+
+  input, textarea, mat-select {
+    font-size: 16px; // Adjust the font size of inputs, textareas, and mat-select
+    padding: 8px; // Adjust the padding for inputs and textareas
+  }
+}

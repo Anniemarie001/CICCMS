@@ -1,0 +1,18 @@
+.contracts-templates-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Display three templates in each row */
+  gap: 10px;
+}
+
+.template-item {
+  cursor: pointer;
+  padding: 15px; /* Increase padding for better spacing */
+  height: 150px; /* Increase height */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+}

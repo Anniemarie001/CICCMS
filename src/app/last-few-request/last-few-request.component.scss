@@ -1,0 +1,59 @@
+.request {
+    .request-wrapper {
+      overflow: auto;
+      height: 185px;
+    }
+    .Type {
+      padding: 20px;
+      padding-bottom: 5px;
+      text-align: center;
+      color: #333333;
+      font-size: 18px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica,
+        sans-serif;
+    }
+    .request {
+      display: flex;
+      align-items: center;
+      padding: 5px 20px;
+      border-bottom: 1px solid #f0f0f0;
+      .Type {
+        padding: 10px;
+        font-size: 16px;
+        width: 190px;
+      }
+      .Title {
+        padding: 10px;
+        font-size: 16px;
+        width: 90px;
+      }
+      .requests {
+        padding: 10px;
+        font-size: 16px;
+        width: 190px;
+        .RequestedBy {
+          margin-top: 4px;
+          font-size: 14px;
+          color: grey;
+        }
+      }
+      .status {
+        padding: 10px;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        &.Draft {
+          color: #6920fb;
+        }
+        &.Review {
+          color: #7e0505;;
+        }
+        &.Rejected {
+          color: #253d3d;
+        }
+        &.Signed {
+            color: #044304;
+          }
+      }
+    }
+  }
